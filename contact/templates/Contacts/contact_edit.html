@@ -1,0 +1,29 @@
+{% extends 'Pages/base.html' %}
+
+
+{% block contenu %}
+<div class="row m-auto">
+    <div class="col-md-6 col-auto mt-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="nom">Nom:</label>
+                <input type="text" class="form-control" name="nom" value="{{ contact.nom}}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="nom">Prenom:</label>
+                <input type="text" class="form-control" name="prenom" value="{{ contact.prenom}}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="telephone">Telephone:</label>
+                <input type="tel" class="form-control" name="telephone" value="{{ contact.telephone}}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" value="{{ contact.email}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Connexion</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

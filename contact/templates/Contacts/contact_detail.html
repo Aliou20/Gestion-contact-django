@@ -1,0 +1,29 @@
+{% extends 'Pages/base.html'%}
+
+{% block contenu %}
+<div class="container">
+    <h1 class="mt-3">Details du contact</h1> 
+    <div class="row">
+        <div class="col-md m-auto">
+            <h2 class="text-center">{{contact.prenom}} {{contact.nom}}</h2>
+            <div class="card card-body">
+                    <ul class="list-group list-group-flush">    
+                        <li class="list-group-item">
+                           Téléphone : {{contact.telephone}}
+                        </li>
+                        <li class="list-group-item">
+                           Email : {{contact.email|default_if_none:"non enregistré"}}
+                        </li>
+                        <li class="list-group-item">
+                           Date de creation : {{contact.create_at|date:"d-m-y"}}
+                        </li>
+                    </ul>
+                    <div class="md-2 mt-3">
+                        <a href="{% url 'edit-contact' contact.id %}" class="btn btn-primary">Modifier  </a>
+                        <a href="{% url 'detele-contact' contact.id %}" class="btn btn-danger">Supprimer  </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

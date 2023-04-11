@@ -1,0 +1,16 @@
+{% extends 'Pages/base.html' %}
+
+{% block contenu %}
+<div class="row">
+    <div class="col-md-6 col-auto mt-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p}}
+            </div>
+            <button type="submit" class="btn btn-primary">Connexion</button>
+        </form>
+        <div class="my-4">Si vous n'avez pas compte <a href="{% url 'register' %}"> Inscrivez-vous</a></div>
+    </div>
+</div>
+{% endblock %}

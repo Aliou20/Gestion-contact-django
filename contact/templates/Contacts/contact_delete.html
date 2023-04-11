@@ -1,0 +1,17 @@
+{% extends 'Pages/base.html' %}
+
+
+{% block contenu %}
+<div class="row m-auto">
+    <div class="col-md-6 col-auto mt-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="alert alert-danger" role="alert">
+                Voulez-vous supprimer ce contact <span class="fw-bold ">{{ contact }}</span> 
+              </div>
+            <button type="submit" class="btn btn-danger">Oui</button>
+            <a href="{% url 'liste' %}" class="btn btn-primary">NON</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
